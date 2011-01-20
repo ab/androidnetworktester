@@ -11,7 +11,6 @@ package org.gc.networktester.tester;
 import org.gc.networktester.R;
 import org.gc.networktester.activity.MainActivity;
 
-import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -28,7 +27,6 @@ public class Download10kbTester implements Tester {
         checkbox = (CheckBox) mainActivity.findViewById( R.id.main__checkbox_10kb_download );
         textview = (TextView) mainActivity.findViewById( R.id.main__text_10kb_download );
         progressbar = (ProgressBar) mainActivity.findViewById( R.id.main__progressbar_10kb_download );
-        Log.d( this.toString(), "************foo" );
         progressbar.setProgress( 0 );
     }
     

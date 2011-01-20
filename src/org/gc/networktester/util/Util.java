@@ -11,8 +11,6 @@ package org.gc.networktester.util;
 import java.util.Collection;
 import java.util.Iterator;
 
-import android.app.Activity;
-
 public class Util {
 
     /** Convert an unsigned byte to an int. */ 

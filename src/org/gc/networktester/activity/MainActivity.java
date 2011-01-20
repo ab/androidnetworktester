@@ -128,13 +128,6 @@ public class MainActivity extends Activity {
         super.onPause();
     }
 
-    public void onResume() {
-        for ( Tester tester : testers ) {
-            tester.setupViews( this );
-        }
-        super.onResume();
-    }
-        
     public boolean isWantStop() {
         return wantStop;
     }

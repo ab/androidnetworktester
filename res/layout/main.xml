@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    
+  <TextView android:id="@+id/main__text_network_type"
+            android:layout_width="wrap_content" 
+    	    android:layout_height="wrap_content"
+    	    android:text="@string/network_type" 
+	    android:paddingTop="4dp"
+	    android:paddingBottom="4dp"
+            android:textSize="15sp" android:textStyle="bold"/>
+
+  <Button android:id="@+id/main__button_startstop"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/start_tests"
+          android:textSize="15sp"/>
+
+  <ScrollView android:layout_width="fill_parent" 
+              android:layout_height="fill_parent"> 
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent">
+
+      <!-- Hostname resolution -->
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	            android:orientation="horizontal"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  		      android:orientation="horizontal"
+		      android:layout_width="140dp"
+		      android:layout_height="wrap_content">
+	  <CheckBox android:id="@+id/main__checkbox_host_resolution"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+                    android:checked="true"/>
+	  <TextView android:layout_width="wrap_content" 
+    		    android:layout_height="wrap_content"
+    		    android:text="@string/host_resolution"/>
+        </LinearLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="180dp"
+                        android:layout_height="fill_parent">
+          <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  	  	        android:orientation="horizontal"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_centerVertical="true">
+            <TextView android:id="@+id/main__text_host_resolution"
+	              android:layout_width="fill_parent" 
+    	              android:layout_height="fill_parent"/>
+            <ProgressBar android:id="@+id/main__progressbar_host_resolution"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         style="@android:style/Widget.ProgressBar.Small"/>
+          </LinearLayout>
+        </RelativeLayout>
+      </LinearLayout>
+
+      <!-- TCP connection -->
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	            android:orientation="horizontal"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  		      android:orientation="horizontal"
+		      android:layout_width="140dp"
+		      android:layout_height="wrap_content">
+	  <CheckBox android:id="@+id/main__checkbox_tcp_connection"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+                    android:checked="true"/>
+	  <TextView android:layout_width="wrap_content" 
+    		    android:layout_height="wrap_content"
+    		    android:text="@string/tcp_connection"/>
+        </LinearLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="180dp"
+                        android:layout_height="fill_parent">
+          <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  	  	        android:orientation="horizontal"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_centerVertical="true">
+            <TextView android:id="@+id/main__text_tcp_connection"
+	              android:layout_width="fill_parent" 
+    	              android:layout_height="fill_parent"/>
+            <ProgressBar android:id="@+id/main__progressbar_tcp_connection"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         style="@android:style/Widget.ProgressBar.Small"/>
+          </LinearLayout>
+        </RelativeLayout>
+      </LinearLayout>
+
+      <!-- Real Web -->
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	            android:orientation="horizontal"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  		      android:orientation="horizontal"
+		      android:layout_width="140dp"
+		      android:layout_height="wrap_content">
+	  <CheckBox android:id="@+id/main__checkbox_real_web"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+                    android:checked="true"/>
+	  <TextView android:layout_width="wrap_content" 
+    		    android:layout_height="wrap_content"
+    		    android:text="@string/real_web"/>
+        </LinearLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="180dp"
+                        android:layout_height="fill_parent">
+          <ImageView android:id="@+id/main__image_real_web"
+  	             android:layout_width="24dp" 
+      	             android:layout_height="24dp"
+	             android:layout_centerVertical="true"/>
+          <TextView android:id="@+id/main__text_real_web"
+	            android:layout_width="fill_parent"
+    	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+		    android:layout_toRightOf="@id/main__image_real_web"
+		    android:paddingLeft="5dp"/>
+          <ProgressBar android:id="@+id/main__progressbar_real_web"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+		       android:layout_centerVertical="true"
+                       style="@android:style/Widget.ProgressBar.Small"/>
+        </RelativeLayout>
+      </LinearLayout>
+
+      <!-- 10KB download -->
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	            android:orientation="horizontal"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  		      android:orientation="horizontal"
+		      android:layout_width="140dp"
+		      android:layout_height="wrap_content">
+	  <CheckBox android:id="@+id/main__checkbox_10kb_download"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+                    android:checked="true"/>
+	  <TextView android:layout_width="wrap_content" 
+    		    android:layout_height="wrap_content"
+    		    android:text="@string/_10kb_download"/>
+        </LinearLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="180dp"
+                        android:layout_height="fill_parent">
+          <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_centerInParent="true">
+              <ProgressBar android:id="@+id/main__progressbar_10kb_download"
+ 	                   android:layout_width="fill_parent"
+	                   android:layout_height="8dp"
+                           style="?android:attr/progressBarStyleHorizontal"/>
+              <TextView android:id="@+id/main__text_10kb_download"
+	                android:layout_width="wrap_content" 
+    	                android:layout_height="wrap_content" 
+		        android:layout_below="@id/main__progressbar_10kb_download"
+                        android:layout_centerHorizontal="true"
+    		        android:text="@string/value_na"/>
+          </RelativeLayout>
+        </RelativeLayout>
+      </LinearLayout>
+
+      <!-- 100KB download -->
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	            android:orientation="horizontal"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  		      android:orientation="horizontal"
+		      android:layout_width="140dp"
+		      android:layout_height="wrap_content">
+	  <CheckBox android:id="@+id/main__checkbox_100kb_download"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+                    android:checked="true"/>
+	  <TextView android:layout_width="wrap_content" 
+    		    android:layout_height="wrap_content"
+    		    android:text="@string/_100kb_download"/>
+        </LinearLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="180dp"
+                        android:layout_height="fill_parent">
+          <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_centerInParent="true">
+              <ProgressBar android:id="@+id/main__progressbar_100kb_download"
+ 	                   android:layout_width="fill_parent"
+	                   android:layout_height="8dp"
+                           style="?android:attr/progressBarStyleHorizontal"/>
+              <TextView android:id="@+id/main__text_100kb_download"
+	                android:layout_width="wrap_content" 
+    	                android:layout_height="wrap_content" 
+		        android:layout_below="@id/main__progressbar_100kb_download"
+                        android:layout_centerHorizontal="true"
+    		        android:text="@string/value_na"/>
+          </RelativeLayout>
+        </RelativeLayout>
+      </LinearLayout>
+
+      <!-- 1MB download -->
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	            android:orientation="horizontal"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  		      android:orientation="horizontal"
+		      android:layout_width="140dp"
+		      android:layout_height="wrap_content">
+	  <CheckBox android:id="@+id/main__checkbox_1mb_download"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"/>
+	  <TextView android:layout_width="wrap_content" 
+    		    android:layout_height="wrap_content"
+    		    android:text="@string/_1mb_download"/>
+        </LinearLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="180dp"
+                        android:layout_height="fill_parent">
+          <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_centerInParent="true">
+              <ProgressBar android:id="@+id/main__progressbar_1mb_download"
+ 	                   android:layout_width="fill_parent"
+	                   android:layout_height="8dp"
+                           style="?android:attr/progressBarStyleHorizontal"/>
+              <TextView android:id="@+id/main__text_1mb_download"
+	                android:layout_width="wrap_content" 
+    	                android:layout_height="wrap_content" 
+		        android:layout_below="@id/main__progressbar_1mb_download"
+                        android:layout_centerHorizontal="true"
+    		        android:text="@string/value_na"/>
+          </RelativeLayout>
+        </RelativeLayout>
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Network Tester</string>
+
+    <string name="start_tests">  Start tests  </string>
+    <string name="stop_tests">  Stop tests  </string>
+    <string name="value_na">n/a</string>
+
+    <string name="network_type">Active network type: %1$s</string>
+    <string name="warning_data_mobile">Warning about data billing, you\'re on mobile network type.</string>
+
+    <string name="failed">Failed (%1$s)</string>
+    <string name="dl_speed">%1$.2f KB/sec</string>
+    <string name="dl_too_small">Download file too small. Try again later or try to update the app.</string>
+
+    <string name="host_resolution">Host resolv: </string>
+    <string name="host_resolved">%1$d then %2$d ms (%3$s)</string>
+    <string name="host_unknownhost">Unknown host</string>
+
+    <string name="tcp_connection">TCP connect: </string>
+    <string name="tcp_connected">%1$d then %2$d ms</string>
+
+    <string name="real_web">Real web: </string>
+    <string name="real_web_ok">real web content</string>
+    <string name="real_web_fail">fake web content!</string>
+
+    <string name="_10kb_download">10KB d/l: </string>
+
+    <string name="_100kb_download">100KB d/l: </string>
+
+    <string name="_1mb_download">1MB d/l: </string>
+
+</resources>

@@ -87,7 +87,7 @@ public class RealWebTester implements Tester {
                  || ! EntityUtils.toString( entity ).equals( "androidnetworktester says it works!\n" ) ) {
                 mainAct.runOnUiThread( new Thread() { public void run() {
                     textview.setText( R.string.real_web_fail );
-                    imageview.setImageResource( R.drawable.real_web_failed );
+                    imageview.setImageResource( R.drawable.failure );
                 } } );
                 return false;
             } else {
@@ -102,11 +102,11 @@ public class RealWebTester implements Tester {
             Log.d( this.toString(), Util.printException( e ) );
             // special case common error when data is not available
             final String str = e.getClass().equals( UnknownHostException.class )
-                                ? mainAct.getResources().getString( R.string.host_unknownhost )
-                                : String.format( mainAct.getResources().getString( R.string.failed ), e.getMessage());
+                                   ? mainAct.getString( R.string.host_unknownhost )
+                                   : mainAct.getString( R.string.failed, e.getMessage() );
             mainAct.runOnUiThread( new Thread() { public void run() {
                 textview.setText( str );
-                imageview.setImageResource( R.drawable.real_web_failed );
+                imageview.setImageResource( R.drawable.failure );
             } } );
             return false;
             

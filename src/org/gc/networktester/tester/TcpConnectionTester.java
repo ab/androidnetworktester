@@ -22,6 +22,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class TcpConnectionTester implements Tester {
     private MainActivity mainAct;
     private CheckBox checkbox;
     private ProgressBar progressbar;
+    private ImageView imageview;
     private TextView textview;
     
     public void setupViews( MainActivity mainActivity ) {
@@ -38,11 +40,14 @@ public class TcpConnectionTester implements Tester {
         textview = (TextView) mainActivity.findViewById( R.id.main__text_tcp_connection );
         progressbar = (ProgressBar) mainActivity.findViewById( R.id.main__progressbar_tcp_connection );
         progressbar.setVisibility( View.GONE );
+        imageview = (ImageView) mainActivity.findViewById( R.id.main__image_tcp_connection );
+        imageview.setVisibility( View.GONE );
     }
     
     public boolean prepareTestAndIsActive() {
         checkbox.setEnabled( false );
         textview.setVisibility( View.GONE );
+        imageview.setVisibility( View.GONE );
         return checkbox.isChecked();
     }
     
@@ -63,9 +68,12 @@ public class TcpConnectionTester implements Tester {
             Log.d( this.toString(), Util.printException( e ) );
             // special case common error when data is not available
             final String str = e.getClass().equals( UnknownHostException.class )
-                                   ? mainAct.getResources().getString( R.string.host_unknownhost )
-                                   : String.format( mainAct.getResources().getString( R.string.failed ), e.getMessage() );
-            mainAct.runOnUiThread( new Thread() { public void run() { textview.setText( str ); } } );
+                                   ? mainAct.getString( R.string.host_unknownhost )
+                                   : mainAct.getString( R.string.failed, e.getMessage() );
+            mainAct.runOnUiThread( new Thread() { public void run() {
+                textview.setText( str );
+                imageview.setImageResource( R.drawable.failure );
+            } } );
             return null;
         }
     }
@@ -79,16 +87,20 @@ public class TcpConnectionTester implements Tester {
             return false;
         }
 
-        Long time_two = tcpConnectionReal();
+        final Long time_two = tcpConnectionReal();
 
         mainAct.runOnUiThread( new Thread() { public void run() {
             textview.setVisibility( View.VISIBLE );
-            progressbar.setVisibility( View.GONE ); } } );
+            imageview.setVisibility( View.VISIBLE );
+            progressbar.setVisibility( View.GONE );
+        } } );
         
         if ( time_one != null && time_two != null ) {
-            final String str = String.format( mainAct.getResources().getString( R.string.tcp_connected ),
-                                              time_one, time_two );
-            mainAct.runOnUiThread( new Thread() { public void run() { textview.setText( str ); } } );
+            final String str = mainAct.getString( R.string.tcp_connected, time_one, time_two );
+            mainAct.runOnUiThread( new Thread() { public void run() {
+                textview.setText( str );
+                imageview.setImageResource( Util.getTimingResource( mainAct, time_two ) );
+            } } );
             return true;
         } else {
             return false;

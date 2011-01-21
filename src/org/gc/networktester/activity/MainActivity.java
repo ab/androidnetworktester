@@ -35,11 +35,14 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    private TextView textNetworkType;
     private Button buttonStartStop;
     
     private List<Tester> testers;
     
-    private volatile boolean running = false;
+    private boolean running = false;
+    private Integer networkType;
+    
     private volatile boolean wantStop = false;
     
     @Override
@@ -61,18 +64,11 @@ public class MainActivity extends Activity {
         // disable java level DNS caching
         System.setProperty( "networkaddress.cache.ttl", "0" );
         System.setProperty( "networkaddress.cache.negative.ttl", "0" );
-
-        // display network type      
-        NetworkInfo netinfo
-            = ( (ConnectivityManager) getSystemService( Context.CONNECTIVITY_SERVICE ) ).getActiveNetworkInfo();
-        String type = netinfo == null ? "unknown"
-                                      : netinfo.getSubtypeName().length() == 0 ? netinfo.getTypeName()
-                                                                               : netinfo.getTypeName() + "/" + netinfo.getSubtypeName();
-        String str = String.format( getResources().getString( R.string.network_type ), type );
-        ( (TextView) findViewById( R.id.main__text_network_type ) ).setText( str );        
     }
 
     private void setupViews() {
+        textNetworkType = (TextView) findViewById( R.id.main__text_network_type );
+        updateNetworkType();
         buttonStartStop = (Button) findViewById( R.id.main__button_startstop );
         buttonStartStop.setOnClickListener( new OnClickListener() {
             public void onClick( View v ) {
@@ -92,7 +88,27 @@ public class MainActivity extends Activity {
         
     }
     
+    private void updateNetworkType() {
+        NetworkInfo netinfo
+            = ( (ConnectivityManager) getSystemService( Context.CONNECTIVITY_SERVICE ) ).getActiveNetworkInfo();
+        String type;
+        if ( netinfo == null ) {
+            type = getString( R.string.network_unknown );
+            networkType = null;
+        } else {
+            type = netinfo.getSubtypeName().length() == 0 ? netinfo.getTypeName()
+                                                          : netinfo.getTypeName() + "/" + netinfo.getSubtypeName();
+            networkType = netinfo.getType();
+        }
+        textNetworkType.setText( getString( R.string.network_type, type ) );        
+    }
+    
+    public Integer getNetworkType() {
+        return networkType;
+    }
+    
     private void launch() {
+        updateNetworkType();  // update for in case app was launched kinda long ago and network has changed
         final Map<Tester, Boolean> areActive = new HashMap<Tester, Boolean>();
         for ( Tester tester : testers ) {
             areActive.put( tester, tester.prepareTestAndIsActive() );

@@ -8,8 +8,17 @@
 
 package org.gc.networktester.util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
+
+import org.gc.networktester.R;
+import org.gc.networktester.activity.MainActivity;
+
+import android.net.ConnectivityManager;
+import android.widget.Toast;
 
 public class Util {
 
@@ -115,4 +124,32 @@ public class Util {
         return out.toString();
     }
  
+    private static long[] wifiThresholds = new long[] { 30, 60 };  
+    private static long[] mobileThresholds = new long[] { 150, 400 };  
+
+    public static int getTimingResource( MainActivity mainAct, long timing ) {
+        if ( mainAct.getNetworkType() == null ) {
+            return 0;
+        } else if ( mainAct.getNetworkType() == ConnectivityManager.TYPE_MOBILE ) {
+            if ( timing < mobileThresholds[ 0 ] ) {
+                return R.drawable.timing_good;
+            } else if ( timing < mobileThresholds[ 1 ] ) {
+                return R.drawable.timing_medium;
+            } else {
+                return R.drawable.timing_bad;
+            }
+        } else if ( mainAct.getNetworkType() == ConnectivityManager.TYPE_WIFI ) {
+            if ( timing < wifiThresholds[ 0 ] ) {
+                return R.drawable.timing_good;
+            } else if ( timing < wifiThresholds[ 1 ] ) {
+                return R.drawable.timing_medium;
+            } else {
+                return R.drawable.timing_bad;
+            }
+        } else {            
+            Toast.makeText( mainAct, R.string.error_unknown_network_type, Toast.LENGTH_LONG ).show();
+            return 0;
+        } 
+    }
+    
 }

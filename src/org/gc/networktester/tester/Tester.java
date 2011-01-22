@@ -16,7 +16,13 @@ public interface Tester {
     public void setupViews( MainActivity mainActivity );
     
     /** Called by UI thread. */
-    public boolean prepareTestAndIsActive();
+    public void prepareTest();
+
+    /** Called by UI thread. */
+    public boolean isActive();
+
+    /** Called by UI thread. */
+    public void setActive( boolean value );
     
     /** Called by background thread. */
     public boolean performTest();

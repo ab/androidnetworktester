@@ -46,11 +46,18 @@ public class Download1mbTester implements Tester {
             } } );
     }
     
-    public boolean prepareTestAndIsActive() {
+    public void prepareTest() {
         checkbox.setEnabled( false );
         textview.setText( R.string.value_na );
         progressbar.setProgress( 0 );
+    }
+    
+    public boolean isActive() {
         return checkbox.isChecked();
+    }
+    
+    public void setActive( boolean value ) {
+        checkbox.setChecked( value );
     }
     
     public boolean performTest() {

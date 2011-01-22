@@ -69,13 +69,19 @@ public class RealWebTester implements Tester {
         httpclient = new DefaultHttpClient( manager, params );
     }
     
-    public boolean prepareTestAndIsActive() {
+    public void prepareTest() {
         checkbox.setEnabled( false );
         textview.setVisibility( View.GONE );
         imageview.setVisibility( View.GONE );
-        return checkbox.isChecked();
     }
     
+    public boolean isActive() {
+        return checkbox.isChecked();
+    }
+
+    public void setActive( boolean value ) {
+        checkbox.setChecked( value );
+    }
     
     public boolean performTest() {
         mainAct.runOnUiThread( new Thread() { public void run() { progressbar.setVisibility( View.VISIBLE ); } } );

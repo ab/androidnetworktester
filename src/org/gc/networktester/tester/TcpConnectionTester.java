@@ -44,11 +44,18 @@ public class TcpConnectionTester implements Tester {
         imageview.setVisibility( View.GONE );
     }
     
-    public boolean prepareTestAndIsActive() {
+    public void prepareTest() {
         checkbox.setEnabled( false );
         textview.setVisibility( View.GONE );
         imageview.setVisibility( View.GONE );
+    }
+    
+    public boolean isActive() {
         return checkbox.isChecked();
+    }
+    
+    public void setActive( boolean value ) {
+        checkbox.setChecked( value );
     }
     
     private Long tcpConnectionReal() {

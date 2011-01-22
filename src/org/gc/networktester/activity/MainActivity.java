@@ -24,6 +24,7 @@ import org.gc.networktester.tester.Tester;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -111,7 +112,8 @@ public class MainActivity extends Activity {
         updateNetworkType();  // update for in case app was launched kinda long ago and network has changed
         final Map<Tester, Boolean> areActive = new HashMap<Tester, Boolean>();
         for ( Tester tester : testers ) {
-            areActive.put( tester, tester.prepareTestAndIsActive() );
+            tester.prepareTest();
+            areActive.put( tester, tester.isActive() );
         }
         buttonStartStop.setText( R.string.stop_tests );
         new Thread() {
@@ -141,7 +143,24 @@ public class MainActivity extends Activity {
  
     public void onPause() {
         wantStop = true;
+        SharedPreferences prefs = getPreferences( Context.MODE_PRIVATE );
+        SharedPreferences.Editor editor = prefs.edit();
+        for ( Tester tester : testers ) {
+            editor.putBoolean( tester.getClass().getName() + ".isActive", tester.isActive() );
+        }
+        editor.commit();
         super.onPause();
+    }
+    
+    public void onResume() {
+        super.onResume();
+        Map<String, ?> prefs = getPreferences( Context.MODE_PRIVATE ).getAll();
+        for ( Tester tester : testers ) {
+            Boolean value = (Boolean) prefs.get( tester.getClass().getName() + ".isActive" );
+            if ( value != null ) {
+                tester.setActive( value );
+            }
+        }
     }
 
     public boolean isWantStop() {

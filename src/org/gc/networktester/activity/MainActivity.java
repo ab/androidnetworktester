@@ -32,11 +32,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
     private TextView textNetworkType;
+    private ImageView imageNetworkType;
     private Button buttonStartStop;
     
     private List<Tester> testers;
@@ -69,6 +71,7 @@ public class MainActivity extends Activity {
 
     private void setupViews() {
         textNetworkType = (TextView) findViewById( R.id.main__text_network_type );
+        imageNetworkType = (ImageView) findViewById( R.id.main__image_network_type );
         updateNetworkType();
         buttonStartStop = (Button) findViewById( R.id.main__button_startstop );
         buttonStartStop.setOnClickListener( new OnClickListener() {
@@ -100,6 +103,11 @@ public class MainActivity extends Activity {
             type = netinfo.getSubtypeName().length() == 0 ? netinfo.getTypeName()
                                                           : netinfo.getTypeName() + "/" + netinfo.getSubtypeName();
             networkType = netinfo.getType();
+            if ( networkType == ConnectivityManager.TYPE_WIFI ) {
+                imageNetworkType.setImageResource( R.drawable.wifi );
+            } else if ( networkType == ConnectivityManager.TYPE_MOBILE ) {
+                imageNetworkType.setImageResource( R.drawable.mobile );
+            }
         }
         textNetworkType.setText( getString( R.string.network_type, type ) );        
     }

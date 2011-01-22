@@ -6,7 +6,7 @@
     <string name="stop_tests">  Stop tests  </string>
     <string name="value_na">n/a</string>
 
-    <string name="network_type">Active network type: %1$s</string>
+    <string name="network_type">Network type: %1$s</string>
     <string name="network_unknown">unknown</string>
     <string name="warning_data_mobile">Warning about data billing, you\'re on mobile network type.</string>
     <string name="error_unknown_network_type">Unknown network type. Try to update the app or report this as a bug.</string>            

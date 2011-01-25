@@ -1,6 +1,6 @@
 /*
  *
- * Copyright (C) 2010 Guillaume Cottenceau.
+ * Copyright (C) 2011 Guillaume Cottenceau.
  *
  * Android Network Tester is licensed under the Apache 2.0 license.
  *
@@ -151,6 +151,9 @@ public class MainActivity extends Activity {
  
     public void onPause() {
         wantStop = true;
+        for ( Tester tester : testers ) {
+            tester.onPause();
+        }
         SharedPreferences prefs = getPreferences( Context.MODE_PRIVATE );
         SharedPreferences.Editor editor = prefs.edit();
         for ( Tester tester : testers ) {

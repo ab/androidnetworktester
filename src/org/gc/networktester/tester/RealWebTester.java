@@ -1,6 +1,6 @@
 /*
  *
- * Copyright (C) 2010 Guillaume Cottenceau.
+ * Copyright (C) 2011 Guillaume Cottenceau.
  *
  * Android Network Tester is licensed under the Apache 2.0 license.
  *
@@ -30,8 +30,10 @@ import org.gc.networktester.R;
 import org.gc.networktester.activity.MainActivity;
 import org.gc.networktester.util.Util;
 
+import android.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -44,16 +46,24 @@ public class RealWebTester implements Tester {
     private ProgressBar progressbar;
     private ImageView imageview;
     private TextView textview;
+    private ImageView imageviewInfo;
     private DefaultHttpClient httpclient;
+    private AlertDialog dialog = null;
+    private int moreInfoMessageId = 0;
     
     public void setupViews( MainActivity mainActivity ) {
         this.mainAct = mainActivity;  
         checkbox = (CheckBox) mainActivity.findViewById( R.id.main__checkbox_real_web );
         textview = (TextView) mainActivity.findViewById( R.id.main__text_real_web );
+        textview.setOnClickListener( new MoreInfoOnClickListener() );
         progressbar = (ProgressBar) mainActivity.findViewById( R.id.main__progressbar_real_web );
         progressbar.setVisibility( View.GONE );
         imageview = (ImageView) mainActivity.findViewById( R.id.main__image_real_web );
         imageview.setVisibility( View.GONE );
+        imageview.setOnClickListener( new MoreInfoOnClickListener() );
+        imageviewInfo = (ImageView) mainActivity.findViewById( R.id.main__image_real_web_info );
+        imageviewInfo.setVisibility( View.GONE );
+        imageviewInfo.setOnClickListener( new MoreInfoOnClickListener() );
 
         HttpParams params = new BasicHttpParams();
         HttpProtocolParams.setVersion( params, HttpVersion.HTTP_1_1 );
@@ -69,10 +79,17 @@ public class RealWebTester implements Tester {
         httpclient = new DefaultHttpClient( manager, params );
     }
     
+    private class MoreInfoOnClickListener implements OnClickListener {
+        public void onClick( View v ) {
+            dialog = Util.createDialog( mainAct, moreInfoMessageId ); 
+        }
+    }
+    
     public void prepareTest() {
         checkbox.setEnabled( false );
         textview.setVisibility( View.GONE );
         imageview.setVisibility( View.GONE );
+        imageviewInfo.setVisibility( View.GONE );
     }
     
     public boolean isActive() {
@@ -94,12 +111,14 @@ public class RealWebTester implements Tester {
                 mainAct.runOnUiThread( new Thread() { public void run() {
                     textview.setText( R.string.real_web_fail );
                     imageview.setImageResource( R.drawable.failure );
+                    moreInfoMessageId = R.string.real_web_fail_expl;
                 } } );
                 return false;
             } else {
                 mainAct.runOnUiThread( new Thread() { public void run() {
                     textview.setText( R.string.real_web_ok );
                     imageview.setImageResource( R.drawable.real_web_ok );
+                    moreInfoMessageId = R.string.real_web_ok_expl;
                 } } );
                 return true;
             }
@@ -113,6 +132,7 @@ public class RealWebTester implements Tester {
             mainAct.runOnUiThread( new Thread() { public void run() {
                 textview.setText( str );
                 imageview.setImageResource( R.drawable.failure );
+                moreInfoMessageId = R.string.tester_not_tested_expl;
             } } );
             return false;
             
@@ -120,6 +140,7 @@ public class RealWebTester implements Tester {
             mainAct.runOnUiThread( new Thread() { public void run() {
                 textview.setVisibility( View.VISIBLE );
                 imageview.setVisibility( View.VISIBLE );
+                imageviewInfo.setVisibility( View.VISIBLE );
                 progressbar.setVisibility( View.GONE ); } } );
         }
     }
@@ -127,5 +148,13 @@ public class RealWebTester implements Tester {
     public void cleanupTests() {
         checkbox.setEnabled( true );
     }
+
+    public void onPause() {
+        // need to detach existing popup windows before pausing/destroying activity
+        // (screen orientation change, for example)
+        if ( dialog != null ) {
+            dialog.dismiss();
+        }
+    }    
     
 }

@@ -1,6 +1,6 @@
 /*
  *
- * Copyright (C) 2010 Guillaume Cottenceau.
+ * Copyright (C) 2011 Guillaume Cottenceau.
  *
  * Android Network Tester is licensed under the Apache 2.0 license.
  *

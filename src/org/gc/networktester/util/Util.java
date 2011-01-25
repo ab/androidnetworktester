@@ -1,6 +1,6 @@
 /*
  *
- * Copyright (C) 2010 Guillaume Cottenceau.
+ * Copyright (C) 2011 Guillaume Cottenceau.
  *
  * Android Network Tester is licensed under the Apache 2.0 license.
  *
@@ -14,6 +14,8 @@ import java.util.Iterator;
 import org.gc.networktester.R;
 import org.gc.networktester.activity.MainActivity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.net.ConnectivityManager;
 import android.widget.Toast;
 
@@ -121,6 +123,14 @@ public class Util {
         return out.toString();
     }
  
+    public static AlertDialog createDialog( final Activity activity, int messageId ) {
+        AlertDialog.Builder builder = new AlertDialog.Builder( activity );
+        builder.setMessage( messageId ).setPositiveButton( activity.getString( R.string.dialog_ok ), null );
+        AlertDialog ad = builder.create();
+        ad.show();
+        return ad;
+    }
+    
     private static long[] wifiThresholds = new long[] { 30, 60 };  
     private static long[] mobileThresholds = new long[] { 150, 400 };  
 

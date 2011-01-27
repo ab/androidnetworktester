@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Testeur Réseau</string>
+
+    <string name="dialog_ok">Ok</string>
+    
+    <string name="start_tests">  Démarrer les tests  </string>
+    <string name="stop_tests">  Arrêter les tests  </string>
+    <string name="value_na">n/d</string>
+    <string name="tester_not_tested_expl">Impossible d\'effectuer les tests. Échec de la connexion de données.</string>
+
+    <string name="network_type">Type de réseau : %1$s</string>
+    <string name="network_unknown">inconnu</string>
+    <string name="warning_data_mobile">Attention à la facturation des données, vous êtes sur le réseau mobile.</string>
+    <string name="error_unknown_network_type">Type de réseau inconnu. Essayez de mettre à jour l\'application ou rapporter ce bug.</string>            
+
+    <string name="failed">Échec (%1$s)</string>
+    <string name="dl_speed">%1$.2f Ko/sec</string>
+    <string name="dl_too_small">Fichier téléchargé trop petit. Vous n\'êtes peut-être pas connecté au vrai web, ou réessayez un peu plus tard, ou essayez de mettre à jour l\'application.</string>
+
+    <string name="host_resolution">Résol. de nom : </string>
+    <string name="host_resolved">%1$d puis %2$d ms</string>
+    <string name="host_unknownhost">Hôte inconnu</string>
+
+    <string name="tcp_connection">Connex. TCP : </string>
+    <string name="tcp_connected">%1$d puis %2$d ms</string>
+
+    <string name="timing_test_good">Le résultat est considéré comme bon. Votre connexion semble plutôt correcte.</string>
+    <string name="timing_test_medium">Le résultat est considéré comme moyen. Votre connexoin semble ok mais pas très rapide.</string>
+    <string name="timing_test_bad">Le résultat est considéré comme mauvais. Votre connexion a l\'air plutôt lente.</string>
+
+    <string name="real_web">Vrai web : </string>
+    <string name="real_web_ok">vrai contenu web</string>
+    <string name="real_web_fail">contenu web incorrect !</string>
+    <string name="real_web_ok_expl">Un petit fichier spécifique a été téléchargé du site web du Testeur Réseau, et son contenu était correct. Donc tout a l\'air bon avec votre connexion de données, vous êtes connecté au vrai web, il n\'y a pas de filtrage ou de redirection.</string>
+    <string name="real_web_fail_expl">Un petit fichier spécifique a été téléchargé du site web du Testeur Réseau, et son contenu était incorrect. Vous n\'êtes probablement pas connecté au vrai web, mais redirigé autre part par exemple vers un portail de paiement !</string>
+
+    <string name="_10kb_download">Téléch. 10Ko : </string>
+
+    <string name="_100kb_download">Téléch. 100Ko : </string>
+
+    <string name="_1mb_download">Téléch. 1Mo : </string>
+
+</resources>

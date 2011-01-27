@@ -21,14 +21,20 @@ import org.gc.networktester.tester.HostResolutionTester;
 import org.gc.networktester.tester.RealWebTester;
 import org.gc.networktester.tester.TcpConnectionTester;
 import org.gc.networktester.tester.Tester;
+import org.gc.networktester.util.Util;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -45,6 +51,7 @@ public class MainActivity extends Activity {
     
     private boolean running = false;
     private Integer networkType;
+    private AlertDialog dialog = null;
     
     private volatile boolean wantStop = false;
     
@@ -116,6 +123,31 @@ public class MainActivity extends Activity {
         return networkType;
     }
     
+    @Override
+    public boolean onCreateOptionsMenu( Menu menu ) {
+        getMenuInflater().inflate( R.menu.main, menu );
+        return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected( MenuItem item ) {
+        switch ( item.getItemId()) {
+        case R.id.menu_help:
+            dialog = Util.createDialog( this, R.string.menu_help_content );
+            break;
+        case R.id.menu_about:
+            dialog = Util.createDialog( this, R.string.menu_about_content ); 
+            break;
+        case R.id.menu_feedback:
+            // Open mail composer
+            final Intent sendIntent = new Intent( Intent.ACTION_VIEW );         
+            sendIntent.setData( Uri.parse( "mailto:gcottenc@gmail.com" ) );
+            sendIntent.putExtra( "subject", "Android Network Tester feedback" );
+            startActivity( sendIntent );
+        }
+        return super.onOptionsItemSelected( item );
+    }
+    
     private void launch() {
         updateNetworkType();  // update for in case app was launched kinda long ago and network has changed
         final Map<Tester, Boolean> areActive = new HashMap<Tester, Boolean>();
@@ -150,11 +182,16 @@ public class MainActivity extends Activity {
     }
  
     public void onPause() {
+        // need to detach existing popup windows before pausing/destroying activity
+        // (screen orientation change, for example)
+        if ( dialog != null ) {
+            dialog.dismiss();
+        }
         wantStop = true;
         for ( Tester tester : testers ) {
             tester.onPause();
         }
-        SharedPreferences prefs = getPreferences( Context.MODE_PRIVATE );
+       SharedPreferences prefs = getPreferences( Context.MODE_PRIVATE );
         SharedPreferences.Editor editor = prefs.edit();
         for ( Tester tester : testers ) {
             editor.putBoolean( tester.getClass().getName() + ".isActive", tester.isActive() );

@@ -41,4 +41,11 @@
 
     <string name="_1mb_download">Téléch. 1Mo : </string>
 
+    <string name="menu_help">Aide</string>
+    <string name="menu_about">À propos</string>
+    <string name="menu_feedback">Feedback</string>
+
+    <string name="menu_help_content">Cette petite application permet d\'effectuer un ou plusieurs tests simple de votre connexion de données. Vous pouvez cocher dans la colonne de gauche les tests que vous désirez effectuer ; les résultats du test s\'afficheront dans la partie droite de l\'écran.</string>
+    <string name="menu_about_content">Cette application est Copyright (c) Guillaume Cottenceau. C\'est un logiciel libre fourni sous licence Apache 2.0. Rendez-vous sur le site web pour accéder au code source.</string>
+
 </resources>

@@ -26,7 +26,7 @@
     <string name="tcp_connected">%1$d puis %2$d ms</string>
 
     <string name="timing_test_good">Le résultat est considéré comme bon. Votre connexion semble plutôt correcte.</string>
-    <string name="timing_test_medium">Le résultat est considéré comme moyen. Votre connexoin semble ok mais pas très rapide.</string>
+    <string name="timing_test_medium">Le résultat est considéré comme moyen. Votre connexion semble ok mais pas très rapide.</string>
     <string name="timing_test_bad">Le résultat est considéré comme mauvais. Votre connexion a l\'air plutôt lente.</string>
 
     <string name="real_web">Vrai web : </string>

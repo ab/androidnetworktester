@@ -19,10 +19,12 @@
     <string name="dl_too_small">Fichier téléchargé trop petit. Vous n\'êtes peut-être pas connecté au vrai web, ou réessayez un peu plus tard, ou essayez de mettre à jour l\'application.</string>
 
     <string name="host_resolution">Résol. de nom : </string>
+    <string name="host_resolution_expl">Deux résolutions de nom sont effectuées sur google.com et www.google.com et la durée est mesurée.</string>
     <string name="host_resolved">%1$d puis %2$d ms</string>
     <string name="host_unknownhost">Hôte inconnu</string>
 
     <string name="tcp_connection">Connex. TCP : </string>
+    <string name="tcp_connection_expl">Deux connexions TCP sont effectuées vers www.google.com:80 et la durée est mesurée.</string>
     <string name="tcp_connected">%1$d puis %2$d ms</string>
 
     <string name="timing_test_good">Le résultat est considéré comme bon. Votre connexion semble plutôt correcte.</string>
@@ -30,6 +32,7 @@
     <string name="timing_test_bad">Le résultat est considéré comme mauvais. Votre connexion a l\'air plutôt lente.</string>
 
     <string name="real_web">Vrai web : </string>
+    <string name="real_web_expl">Un petit fichier spécifique est téléchargé du site web du Testeur Réseau, et si son contenu est incorrect, cela voudrait dire que vous n\'êtes probablement pas connecté au vrai web, mais redirigé autre part, par exemple vers un portail de paiement (cas de hotspots Wifi ouverts, mais nécessitant paiement pour leur utilisation).</string>
     <string name="real_web_ok">vrai contenu web</string>
     <string name="real_web_fail">contenu web incorrect !</string>
     <string name="real_web_ok_expl">Un petit fichier spécifique a été téléchargé du site web du Testeur Réseau, et son contenu était correct. Donc tout a l\'air bon avec votre connexion de données, vous êtes connecté au vrai web, il n\'y a pas de filtrage ou de redirection.</string>

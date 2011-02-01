@@ -19,10 +19,12 @@
     <string name="dl_too_small">Download file too small. You might not be connected to the real web, or try again later, or try to update the app.</string>
 
     <string name="host_resolution">Host resolv: </string>
+    <string name="host_resolution_expl">Two hostname resolutions are performed on google.com and www.google.com and timing is measured.</string>
     <string name="host_resolved">%1$d then %2$d ms</string>
     <string name="host_unknownhost">Unknown host</string>
 
     <string name="tcp_connection">TCP connect: </string>
+    <string name="tcp_connection_expl">Two TCP connections are performed towards www.google.com:80 and timing is measured.</string>
     <string name="tcp_connected">%1$d then %2$d ms</string>
 
     <string name="timing_test_good">The timing result is considered to be good. Your connection seems pretty fine.</string>
@@ -30,6 +32,7 @@
     <string name="timing_test_bad">The timing result is considered to be bad. Your connection seems pretty slow.</string>
 
     <string name="real_web">Real web: </string>
+    <string name="real_web_expl">A small dedicated file is downloaded from Network Tester website, and if its content is not correct, it would mean you\'re probably not connected to the real web, but redirected somewhere else like a billing portal (open Wifi hotspot case, needing payment for using).</string>
     <string name="real_web_ok">real web content</string>
     <string name="real_web_fail">fake web content!</string>
     <string name="real_web_ok_expl">A small dedicated file was downloaded from Network Tester website, and its content was correct. So everything\'s fine with your data connection, you\'re connected to the real web, there\'s no filtering or redirecting.</string>

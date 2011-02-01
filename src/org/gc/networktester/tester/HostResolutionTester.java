@@ -36,8 +36,8 @@ public class HostResolutionTester implements Tester {
     private TextView textview;
     private ImageView imageviewInfo;
     private AlertDialog dialog = null;
-    private int moreInfoMessageId = 0;
-        
+    private int moreInfoMessageId = R.string.host_resolution_expl;
+    
     public void setupViews( MainActivity mainActivity ) {
         this.mainAct = mainActivity;  
         checkbox = (CheckBox) mainActivity.findViewById( R.id.main__checkbox_host_resolution );
@@ -49,7 +49,6 @@ public class HostResolutionTester implements Tester {
         imageview.setVisibility( View.GONE );
         imageview.setOnClickListener( new MoreInfoOnClickListener() );
         imageviewInfo = (ImageView) mainActivity.findViewById( R.id.main__image_host_resolution_info );
-        imageviewInfo.setVisibility( View.GONE );
         imageviewInfo.setOnClickListener( new MoreInfoOnClickListener() );
     }
 
@@ -63,7 +62,7 @@ public class HostResolutionTester implements Tester {
         checkbox.setEnabled( false );
         textview.setVisibility( View.GONE );
         imageview.setVisibility( View.GONE );
-        imageviewInfo.setVisibility( View.GONE );
+        moreInfoMessageId = R.string.host_resolution_expl;
     }
     
     public boolean isActive() {
@@ -123,7 +122,6 @@ public class HostResolutionTester implements Tester {
             mainAct.runOnUiThread( new Thread() { public void run() {
                 textview.setVisibility( View.VISIBLE );
                 imageview.setVisibility( View.VISIBLE );
-                imageviewInfo.setVisibility( View.VISIBLE );
                 progressbar.setVisibility( View.GONE ); } } );
         }
     }

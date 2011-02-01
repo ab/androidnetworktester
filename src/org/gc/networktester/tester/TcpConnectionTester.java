@@ -108,6 +108,7 @@ public class TcpConnectionTester implements Tester {
 
         Long time_one = tcpConnectionReal();
         if ( mainAct.isWantStop() ) {
+            mainAct.runOnUiThread( new Thread() { public void run() { progressbar.setVisibility( View.GONE ); } } );
             return false;
         }
 

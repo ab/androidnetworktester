@@ -8,10 +8,13 @@
 
 package org.gc.networktester.tester;
 
+import java.io.IOException;
+import java.net.ConnectException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
+import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 
 import org.gc.networktester.R;
@@ -75,26 +78,38 @@ public class TcpConnectionTester implements Tester {
     }
     
     private Long tcpConnectionReal() {
+        InetAddress address;
         try {
-            InetAddress address = InetAddress.getByName( "www.google.com" );
+            address = InetAddress.getByName( "www.google.com" );
+        } catch ( UnknownHostException e ) {
+            mainAct.runOnUiThread( new Thread() { public void run() {
+                textview.setText( R.string.typical_error_unknownhost );
+                imageview.setImageResource( R.drawable.failure );
+                moreInfoMessageId = R.string.tester_not_tested_expl;
+            } } );
+            return null;
+        }
+        try {   
             Socket sock = new Socket();
             SocketAddress localaddr = new InetSocketAddress( (InetAddress)null, 0 );
             SocketAddress remoteaddr = new InetSocketAddress( address, 80 );
             sock.bind( localaddr );
             long now = SystemClock.uptimeMillis();
-            sock.connect( remoteaddr, 10000 );
+            sock.connect( remoteaddr, 10 * 1000 );
             long time = SystemClock.uptimeMillis() - now;
             sock.close();
             return time;
 
-        } catch ( Exception e ) {
-            Log.d( this.toString(), Util.printException( e ) );
-            // special case common error when data is not available
-            final String str = e.getClass().equals( UnknownHostException.class )
-                                   ? mainAct.getString( R.string.host_unknownhost )
-                                   : mainAct.getString( R.string.failed, e.getMessage() );
+        } catch ( final IOException ioe ) {
+            Log.d( this.toString(), Util.printException( ioe ) );
             mainAct.runOnUiThread( new Thread() { public void run() {
-                textview.setText( str );
+                if ( ioe instanceof SocketTimeoutException ) {
+                    textview.setText( mainAct.getString( R.string.typical_error_connectiontimeout ) );
+                } else if ( ioe instanceof ConnectException ) {
+                    textview.setText( mainAct.getString( R.string.typical_error_connectionrefused ) );
+                } else {
+                    textview.setText( Util.exceptionMessageOrClass( ioe ) );
+                }
                 imageview.setImageResource( R.drawable.failure );
                 moreInfoMessageId = R.string.tester_not_tested_expl;
             } } );

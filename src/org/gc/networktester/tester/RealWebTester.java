@@ -8,8 +8,6 @@
 
 package org.gc.networktester.tester;
 
-import java.net.UnknownHostException;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpVersion;
@@ -122,14 +120,10 @@ public class RealWebTester implements Tester {
                 return true;
             }
             
-        } catch ( Exception e ) {
+        } catch ( final Exception e ) {
             Log.d( this.toString(), Util.printException( e ) );
-            // special case common error when data is not available
-            final String str = e.getClass().equals( UnknownHostException.class )
-                                   ? mainAct.getString( R.string.host_unknownhost )
-                                   : mainAct.getString( R.string.failed, e.getMessage() );
             mainAct.runOnUiThread( new Thread() { public void run() {
-                textview.setText( str );
+                textview.setText( Util.typicalHttpclientExceptionToString( mainAct, e ) );
                 imageview.setImageResource( R.drawable.failure );
                 moreInfoMessageId = R.string.tester_not_tested_expl;
             } } );

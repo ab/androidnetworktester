@@ -8,14 +8,19 @@
 
 package org.gc.networktester.util;
 
+import java.net.ConnectException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 import java.util.Collection;
 import java.util.Iterator;
 
+import org.apache.http.conn.ConnectTimeoutException;
 import org.gc.networktester.R;
 import org.gc.networktester.activity.MainActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.net.ConnectivityManager;
 import android.widget.Toast;
 
@@ -122,7 +127,19 @@ public class Util {
         }
         return out.toString();
     }
- 
+
+    public static String exceptionMessageOrClass( Exception e ) {
+        return e.getMessage() != null && e.getMessage().length() > 0 ? e.getMessage() : e.getClass().getSimpleName();
+    }
+    
+    public static String typicalHttpclientExceptionToString( Context ctx, Exception e ) {
+        return e instanceof UnknownHostException ? ctx.getString( R.string.typical_error_unknownhost )
+             : e instanceof ConnectTimeoutException ? ctx.getString( R.string.typical_error_connectiontimeout )
+             : e instanceof ConnectException ? ctx.getString( R.string.typical_error_connectionrefused )
+             : e instanceof SocketTimeoutException ? ctx.getString( R.string.typical_error_sockettimeout )
+             : exceptionMessageOrClass( e );
+    }
+
     public static AlertDialog createDialog( final Activity activity, int messageId ) {
         AlertDialog.Builder builder = new AlertDialog.Builder( activity );
         builder.setMessage( messageId ).setPositiveButton( activity.getString( R.string.dialog_ok ), null );

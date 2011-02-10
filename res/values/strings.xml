@@ -21,7 +21,11 @@
     <string name="host_resolution">Host resolv: </string>
     <string name="host_resolution_expl">Two hostname resolutions are performed on google.com and www.google.com and timing is measured.</string>
     <string name="host_resolved">%1$d then %2$d ms</string>
-    <string name="host_unknownhost">Unknown host</string>
+
+    <string name="typical_error_unknownhost">Unknown host</string>
+    <string name="typical_error_connectiontimeout">Connection timeout</string>
+    <string name="typical_error_connectionrefused">Connection refused</string>
+    <string name="typical_error_sockettimeout">Data timeout</string>
 
     <string name="tcp_connection">TCP connect: </string>
     <string name="tcp_connection_expl">Two TCP connections are performed towards www.google.com:80 and timing is measured.</string>

@@ -10,7 +10,6 @@ package org.gc.networktester.tester;
 
 import java.io.InputStream;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 import org.gc.networktester.R;
 import org.gc.networktester.activity.MainActivity;
@@ -71,9 +70,7 @@ public class DownloadTesterHelper {
         } catch ( Exception e ) {
             Log.d( "DownloadTesterHelper", Util.printException( e ) );
             // special case common error when data is not available
-            final String str = e.getClass().equals( UnknownHostException.class )
-                                   ? mainAct.getString( R.string.host_unknownhost )
-                                   : mainAct.getString( R.string.failed, e.getMessage() );
+            final String str = Util.typicalHttpclientExceptionToString( mainAct, e );
             mainAct.runOnUiThread( new Thread() { public void run() { text.setText( str ); } } );
             return false;
         }

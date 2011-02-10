@@ -112,7 +112,7 @@ public class HostResolutionTester implements Tester {
             
         } catch ( UnknownHostException e ) {
             mainAct.runOnUiThread( new Thread() { public void run() {
-                textview.setText( R.string.host_unknownhost );
+                textview.setText( R.string.typical_error_unknownhost );
                 imageview.setImageResource( R.drawable.failure );
                 moreInfoMessageId = R.string.tester_not_tested_expl;
             } } );

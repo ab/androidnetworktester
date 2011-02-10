@@ -21,7 +21,11 @@
     <string name="host_resolution">Résol. de nom : </string>
     <string name="host_resolution_expl">Deux résolutions de nom sont effectuées sur google.com et www.google.com et la durée est mesurée.</string>
     <string name="host_resolved">%1$d puis %2$d ms</string>
-    <string name="host_unknownhost">Hôte inconnu</string>
+
+    <string name="typical_error_unknownhost">Hôte inconnu</string>
+    <string name="typical_error_connectiontimeout">Timeout à la connexion</string>
+    <string name="typical_error_connectionrefused">Connexion refusée</string>
+    <string name="typical_error_sockettimeout">Timeout à la réception des données</string>
 
     <string name="tcp_connection">Connex. TCP : </string>
     <string name="tcp_connection_expl">Deux connexions TCP sont effectuées vers www.google.com:80 et la durée est mesurée.</string>

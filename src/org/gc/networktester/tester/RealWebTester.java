@@ -8,6 +8,8 @@
 
 package org.gc.networktester.tester;
 
+import java.io.IOException;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpVersion;
@@ -99,10 +101,11 @@ public class RealWebTester implements Tester {
     
     public boolean performTest() {
         mainAct.runOnUiThread( new Thread() { public void run() { progressbar.setVisibility( View.VISIBLE ); } } );
+        HttpEntity entity = null;
         try {
             HttpResponse response = httpclient.execute(
                                       new HttpGet( "http://androidnetworktester.googlecode.com/files/realweb.txt" ) );
-            HttpEntity entity = response.getEntity();
+            entity = response.getEntity();
             if ( entity == null
                  || ! EntityUtils.toString( entity ).equals( "androidnetworktester says it works!\n" ) ) {
                 mainAct.runOnUiThread( new Thread() { public void run() {
@@ -130,6 +133,11 @@ public class RealWebTester implements Tester {
             return false;
             
         } finally {
+            if ( entity != null ) {
+                try {
+                    entity.consumeContent();
+                } catch ( IOException e ) {}
+            }
             mainAct.runOnUiThread( new Thread() { public void run() {
                 textview.setVisibility( View.VISIBLE );
                 imageview.setVisibility( View.VISIBLE );

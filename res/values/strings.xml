@@ -12,6 +12,7 @@
     <string name="network_type">Network type: %1$s</string>
     <string name="network_unknown">unknown</string>
     <string name="warning_data_mobile">Warning about data billing, you\'re on mobile network type.</string>
+    <string name="warning_data_generic">Warning about data billing, you\'ll be downloading one megabyte of data.</string>
     <string name="error_unknown_network_type">Unknown network type. Try to update the app or report this as a bug.</string>            
 
     <string name="failed">Failed (%1$s)</string>

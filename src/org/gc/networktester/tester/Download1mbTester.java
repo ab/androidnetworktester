@@ -39,9 +39,13 @@ public class Download1mbTester implements Tester {
             public void onCheckedChanged( CompoundButton buttonView, boolean isChecked ) {
                 NetworkInfo netinfo
                     = ( (ConnectivityManager) mainAct.getSystemService( Context.CONNECTIVITY_SERVICE ) ).getActiveNetworkInfo();
-                if ( netinfo != null && netinfo.getType() == ConnectivityManager.TYPE_MOBILE && ! warningDataDone ) {
+                if ( ! warningDataDone ) {
                     warningDataDone = true;
-                    Toast.makeText( mainAct, R.string.warning_data_mobile, Toast.LENGTH_LONG ).show(); 
+                    if ( netinfo != null && netinfo.getType() == ConnectivityManager.TYPE_MOBILE ) {
+                        Toast.makeText( mainAct, R.string.warning_data_mobile, Toast.LENGTH_LONG ).show();
+                    } else {
+                        Toast.makeText( mainAct, R.string.warning_data_generic, Toast.LENGTH_LONG ).show();
+                    }
                 }
             } } );
     }

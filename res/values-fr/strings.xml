@@ -12,6 +12,7 @@
     <string name="network_type">Type de réseau : %1$s</string>
     <string name="network_unknown">inconnu</string>
     <string name="warning_data_mobile">Attention à la facturation des données, vous êtes sur le réseau mobile.</string>
+    <string name="warning_data_generic">Attention à la facturation des données, vous allez télécharger un mégaoctet de données.</string>
     <string name="error_unknown_network_type">Type de réseau inconnu. Essayez de mettre à jour l\'application ou rapporter ce bug.</string>            
 
     <string name="failed">Échec (%1$s)</string>

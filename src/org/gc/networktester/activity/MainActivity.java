@@ -75,7 +75,7 @@ public class MainActivity extends Activity {
         System.setProperty( "networkaddress.cache.ttl", "0" );
         System.setProperty( "networkaddress.cache.negative.ttl", "0" );
     }
-
+    
     private void setupViews() {
         textNetworkType = (TextView) findViewById( R.id.main__text_network_type );
         imageNetworkType = (ImageView) findViewById( R.id.main__image_network_type );
@@ -114,6 +114,8 @@ public class MainActivity extends Activity {
                 imageNetworkType.setImageResource( R.drawable.wifi );
             } else if ( networkType == ConnectivityManager.TYPE_MOBILE ) {
                 imageNetworkType.setImageResource( R.drawable.mobile );
+            } else if ( networkType == 6 ) {  // ConnectivityManager.TYPE_WIMAX since API level 8
+                imageNetworkType.setImageResource( R.drawable.wimax );
             }
         }
         textNetworkType.setText( getString( R.string.network_type, type ) );        
@@ -191,7 +193,7 @@ public class MainActivity extends Activity {
         for ( Tester tester : testers ) {
             tester.onPause();
         }
-       SharedPreferences prefs = getPreferences( Context.MODE_PRIVATE );
+        SharedPreferences prefs = getPreferences( Context.MODE_PRIVATE );
         SharedPreferences.Editor editor = prefs.edit();
         for ( Tester tester : testers ) {
             editor.putBoolean( tester.getClass().getName() + ".isActive", tester.isActive() );

@@ -162,7 +162,8 @@ public class Util {
             } else {
                 return R.drawable.timing_bad;
             }
-        } else if ( mainAct.getNetworkType() == ConnectivityManager.TYPE_WIFI ) {
+        } else if ( mainAct.getNetworkType() == ConnectivityManager.TYPE_WIFI
+                    || mainAct.getNetworkType() == 6 ) {  // ConnectivityManager.TYPE_WIMAX since API level 8
             if ( timing < wifiThresholds[ 0 ] ) {
                 return R.drawable.timing_good;
             } else if ( timing < wifiThresholds[ 1 ] ) {

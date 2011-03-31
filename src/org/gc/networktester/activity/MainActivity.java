@@ -40,6 +40,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -145,7 +146,11 @@ public class MainActivity extends Activity {
             final Intent sendIntent = new Intent( Intent.ACTION_VIEW );         
             sendIntent.setData( Uri.parse( "mailto:gcottenc@gmail.com" ) );
             sendIntent.putExtra( "subject", "Android Network Tester feedback" );
-            startActivity( sendIntent );
+            try {
+                startActivity( sendIntent );
+            } catch ( Exception e ) {
+                Toast.makeText( this, R.string.error_failed_mail_composer, Toast.LENGTH_LONG ).show();
+            }
         }
         return super.onOptionsItemSelected( item );
     }

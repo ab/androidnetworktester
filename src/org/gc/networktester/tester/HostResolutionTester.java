@@ -15,11 +15,11 @@ import java.util.List;
 
 import org.gc.networktester.R;
 import org.gc.networktester.activity.MainActivity;
+import org.gc.networktester.util.Log;
 import org.gc.networktester.util.Util;
 
 import android.app.AlertDialog;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
@@ -94,7 +94,7 @@ public class HostResolutionTester implements Tester {
             for ( byte part : address.getAddress() ) {
                 ip.add( String.valueOf( Util.unsignedByteToInt( part ) ) );
             }
-            Log.d( this.toString(), "Resolved as " + Util.join( ip, "." ) );
+            Log.debug( "Resolved as " + Util.join( ip, "." ) );
             final String str = mainAct.getString( R.string.host_resolved, time_one, time_two );
             mainAct.runOnUiThread( new Thread() { public void run() {
                 textview.setText( str );

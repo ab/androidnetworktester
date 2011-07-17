@@ -19,11 +19,11 @@ import java.net.UnknownHostException;
 
 import org.gc.networktester.R;
 import org.gc.networktester.activity.MainActivity;
+import org.gc.networktester.util.Log;
 import org.gc.networktester.util.Util;
 
 import android.app.AlertDialog;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
@@ -101,7 +101,7 @@ public class TcpConnectionTester implements Tester {
             return time;
 
         } catch ( final IOException ioe ) {
-            Log.d( this.toString(), Util.printException( ioe ) );
+            Log.debug( Util.printException( ioe ) );
             mainAct.runOnUiThread( new Thread() { public void run() {
                 if ( ioe instanceof SocketTimeoutException ) {
                     textview.setText( mainAct.getString( R.string.typical_error_connectiontimeout ) );

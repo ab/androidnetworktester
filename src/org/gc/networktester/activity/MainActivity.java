@@ -21,6 +21,7 @@ import org.gc.networktester.tester.HostResolutionTester;
 import org.gc.networktester.tester.RealWebTester;
 import org.gc.networktester.tester.TcpConnectionTester;
 import org.gc.networktester.tester.Tester;
+import org.gc.networktester.util.Log;
 import org.gc.networktester.util.Util;
 
 import android.app.Activity;
@@ -32,7 +33,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -169,7 +169,7 @@ public class MainActivity extends Activity {
                 try {
                     for ( Tester tester : testers ) {
                         if ( areActive.get( tester ) ) {
-                            Log.d( this.toString(), "Launch test " + tester );
+                            Log.debug( "Launch test " + tester );
                             if ( ! tester.performTest() || wantStop ) {
                                 return;
                             }

@@ -13,10 +13,10 @@ import java.net.Socket;
 
 import org.gc.networktester.R;
 import org.gc.networktester.activity.MainActivity;
+import org.gc.networktester.util.Log;
 import org.gc.networktester.util.Util;
 
 import android.os.SystemClock;
-import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -68,7 +68,7 @@ public class DownloadTesterHelper {
             return true;
 
         } catch ( Exception e ) {
-            Log.d( "DownloadTesterHelper", Util.printException( e ) );
+            Log.debug( Util.printException( e ) );
             // special case common error when data is not available
             final String str = Util.typicalHttpclientExceptionToString( mainAct, e );
             mainAct.runOnUiThread( new Thread() { public void run() { text.setText( str ); } } );

@@ -28,10 +28,10 @@ import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.util.EntityUtils;
 import org.gc.networktester.R;
 import org.gc.networktester.activity.MainActivity;
+import org.gc.networktester.util.Log;
 import org.gc.networktester.util.Util;
 
 import android.app.AlertDialog;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
@@ -124,7 +124,7 @@ public class RealWebTester implements Tester {
             }
             
         } catch ( final Exception e ) {
-            Log.d( this.toString(), Util.printException( e ) );
+            Log.debug( Util.printException( e ) );
             mainAct.runOnUiThread( new Thread() { public void run() {
                 textview.setText( Util.typicalHttpclientExceptionToString( mainAct, e ) );
                 imageview.setImageResource( R.drawable.failure );

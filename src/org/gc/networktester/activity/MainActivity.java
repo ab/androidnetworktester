@@ -134,23 +134,13 @@ public class MainActivity extends Activity {
     
     @Override
     public boolean onOptionsItemSelected( MenuItem item ) {
-        switch ( item.getItemId()) {
+        switch ( item.getItemId() ) {
         case R.id.menu_help:
             dialog = Util.createDialog( this, R.string.menu_help_content );
             break;
         case R.id.menu_about:
             dialog = Util.createDialog( this, R.string.menu_about_content ); 
             break;
-        case R.id.menu_feedback:
-            // Open mail composer
-            final Intent sendIntent = new Intent( Intent.ACTION_VIEW );         
-            sendIntent.setData( Uri.parse( "mailto:gcottenc@gmail.com" ) );
-            sendIntent.putExtra( "subject", "Android Network Tester feedback" );
-            try {
-                startActivity( sendIntent );
-            } catch ( Exception e ) {
-                Toast.makeText( this, R.string.error_failed_mail_composer, Toast.LENGTH_LONG ).show();
-            }
         }
         return super.onOptionsItemSelected( item );
     }

@@ -6,7 +6,4 @@
   <item android:id="@+id/menu_about"
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="@string/menu_about" />
-  <item android:id="@+id/menu_feedback"
-        android:icon="@android:drawable/ic_menu_send"
-        android:title="@string/menu_feedback" />
 </menu>

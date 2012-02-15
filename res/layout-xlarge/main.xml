@@ -6,17 +6,17 @@
              android:gravity="center">
 <LinearLayout android:orientation="vertical"
               android:gravity="center"
-              android:layout_width="320dp"
+              android:layout_width="400dp"
               android:layout_height="fill_parent">
     
   <LinearLayout android:orientation="horizontal"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:paddingTop="4dp">
+	        android:paddingTop="6dp">
     <ImageView android:id="@+id/main__image_network_type"
-               android:layout_width="32dp" 
-               android:layout_height="32dp"
-               android:paddingRight="4dp"/>
+               android:layout_width="48dp" 
+               android:layout_height="48dp"
+               android:paddingRight="6dp"/>
     <RelativeLayout android:layout_width="wrap_content"
                     android:layout_height="fill_parent">
       <TextView android:id="@+id/main__text_network_type"
@@ -24,7 +24,7 @@
       	        android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
     	        android:text="@string/network_type" 
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textStyle="bold"/>
     </RelativeLayout>
   </LinearLayout>
@@ -33,7 +33,8 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="@string/start_tests"
-          android:textSize="18sp"/>
+	  android:layout_margin="20dp"
+          android:textSize="25sp"/>
 
   <ScrollView android:layout_width="fill_parent" 
               android:layout_height="fill_parent"> 
@@ -47,7 +48,7 @@
 	              android:layout_height="wrap_content">
         <LinearLayout android:id="@+id/main__checkbox_and_text_host_resolution"
   		      android:orientation="horizontal"
-		      android:layout_width="140dp"
+		      android:layout_width="180dp"
 		      android:layout_height="wrap_content"
 		      android:layout_alignParentLeft="true">
 	  <CheckBox android:id="@+id/main__checkbox_host_resolution"
@@ -58,6 +59,7 @@
 	                  android:layout_height="fill_parent">
 	    <TextView android:layout_width="wrap_content" 
     		      android:layout_height="wrap_content"
+                      android:textSize="16sp"
                       android:layout_centerVertical="true"
     		      android:text="@string/host_resolution"/>
 	  </RelativeLayout>
@@ -75,7 +77,8 @@
     	            android:layout_height="wrap_content"
 	            android:layout_centerVertical="true"
 		    android:layout_toRightOf="@id/main__image_host_resolution"
-		    android:paddingLeft="5dp"/>
+                    android:textSize="16sp"
+		    android:paddingLeft="7dp"/>
           <ProgressBar android:id="@+id/main__progressbar_host_resolution"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
@@ -95,7 +98,7 @@
 	              android:layout_height="wrap_content">
         <LinearLayout android:id="@+id/main__checkbox_and_text_tcp_connection"
                       android:orientation="horizontal"
-		      android:layout_width="140dp"
+		      android:layout_width="180dp"
 		      android:layout_height="wrap_content"
 		      android:layout_alignParentLeft="true">
           <CheckBox android:id="@+id/main__checkbox_tcp_connection"
@@ -106,6 +109,7 @@
 	                  android:layout_height="fill_parent">
             <TextView android:layout_width="wrap_content" 
     		      android:layout_height="wrap_content"
+                      android:textSize="16sp"
                       android:layout_centerVertical="true"
     		      android:text="@string/tcp_connection"/>
           </RelativeLayout>
@@ -123,7 +127,8 @@
     	            android:layout_height="wrap_content"
 	            android:layout_centerVertical="true"
 		    android:layout_toRightOf="@id/main__image_tcp_connection"
-		    android:paddingLeft="5dp"/>
+                    android:textSize="16sp"
+		    android:paddingLeft="7dp"/>
           <ProgressBar android:id="@+id/main__progressbar_tcp_connection"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
@@ -143,7 +148,7 @@
 	              android:layout_height="wrap_content">
         <LinearLayout android:id="@+id/main__checkbox_and_text_real_web"
                       android:orientation="horizontal"
-		      android:layout_width="140dp"
+		      android:layout_width="180dp"
 		      android:layout_height="wrap_content"
 		      android:layout_alignParentLeft="true">
 	  <CheckBox android:id="@+id/main__checkbox_real_web"
@@ -154,6 +159,7 @@
 	                  android:layout_height="fill_parent">
 	    <TextView android:layout_width="wrap_content" 
     		      android:layout_height="wrap_content"
+                      android:textSize="16sp"
                       android:layout_centerVertical="true"
     		      android:text="@string/real_web"/>
 	  </RelativeLayout>
@@ -171,7 +177,8 @@
     	            android:layout_height="wrap_content"
 	            android:layout_centerVertical="true"
 		    android:layout_toRightOf="@id/main__image_real_web"
-		    android:paddingLeft="5dp"/>
+                    android:textSize="16sp"
+		    android:paddingLeft="7dp"/>
           <ProgressBar android:id="@+id/main__progressbar_real_web"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
@@ -191,7 +198,7 @@
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content">
         <LinearLayout android:orientation="horizontal"
-		      android:layout_width="140dp"
+		      android:layout_width="180dp"
 		      android:layout_height="wrap_content">
 	  <CheckBox android:id="@+id/main__checkbox_10kb_download"
 		    android:layout_width="wrap_content"
@@ -201,24 +208,26 @@
 	                  android:layout_height="fill_parent">
 	    <TextView android:layout_width="wrap_content" 
     		      android:layout_height="wrap_content"
+                      android:textSize="16sp"
                       android:layout_centerVertical="true"
     		      android:text="@string/_10kb_download"/>
 	  </RelativeLayout>
         </LinearLayout>
-        <RelativeLayout android:layout_width="180dp"
+        <RelativeLayout android:layout_width="220dp"
                         android:layout_height="fill_parent">
           <RelativeLayout android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
                           android:layout_centerInParent="true">
               <ProgressBar android:id="@+id/main__progressbar_10kb_download"
  	                   android:layout_width="fill_parent"
-	                   android:layout_height="8dp"
+	                   android:layout_height="12dp"
                            style="?android:attr/progressBarStyleHorizontal"/>
               <TextView android:id="@+id/main__text_10kb_download"
 	                android:layout_width="wrap_content" 
     	                android:layout_height="wrap_content" 
 		        android:layout_below="@id/main__progressbar_10kb_download"
                         android:layout_centerHorizontal="true"
+                        android:textSize="16sp"
     		        android:text="@string/value_na"/>
           </RelativeLayout>
         </RelativeLayout>
@@ -229,7 +238,7 @@
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content">
         <LinearLayout android:orientation="horizontal"
-		      android:layout_width="140dp"
+		      android:layout_width="180dp"
 		      android:layout_height="wrap_content">
 	  <CheckBox android:id="@+id/main__checkbox_100kb_download"
 		    android:layout_width="wrap_content"
@@ -239,24 +248,26 @@
 	                  android:layout_height="fill_parent">
 	    <TextView android:layout_width="wrap_content" 
     		      android:layout_height="wrap_content"
+                      android:textSize="16sp"
                       android:layout_centerVertical="true"
     		      android:text="@string/_100kb_download"/>
 	  </RelativeLayout>
         </LinearLayout>
-        <RelativeLayout android:layout_width="180dp"
+        <RelativeLayout android:layout_width="220dp"
                         android:layout_height="fill_parent">
           <RelativeLayout android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
                           android:layout_centerInParent="true">
               <ProgressBar android:id="@+id/main__progressbar_100kb_download"
  	                   android:layout_width="fill_parent"
-	                   android:layout_height="8dp"
+	                   android:layout_height="12dp"
                            style="?android:attr/progressBarStyleHorizontal"/>
               <TextView android:id="@+id/main__text_100kb_download"
 	                android:layout_width="wrap_content" 
     	                android:layout_height="wrap_content" 
 		        android:layout_below="@id/main__progressbar_100kb_download"
                         android:layout_centerHorizontal="true"
+                        android:textSize="16sp"
     		        android:text="@string/value_na"/>
           </RelativeLayout>
         </RelativeLayout>
@@ -267,7 +278,7 @@
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content">
         <LinearLayout android:orientation="horizontal"
-		      android:layout_width="140dp"
+		      android:layout_width="180dp"
 		      android:layout_height="wrap_content">
 	  <CheckBox android:id="@+id/main__checkbox_1mb_download"
 		    android:layout_width="wrap_content"
@@ -276,24 +287,26 @@
 	                  android:layout_height="fill_parent">
 	    <TextView android:layout_width="wrap_content" 
     		      android:layout_height="wrap_content"
+                      android:textSize="16sp"
                       android:layout_centerVertical="true"
     		      android:text="@string/_1mb_download"/>
 	  </RelativeLayout>
         </LinearLayout>
-        <RelativeLayout android:layout_width="180dp"
+        <RelativeLayout android:layout_width="220dp"
                         android:layout_height="fill_parent">
           <RelativeLayout android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
                           android:layout_centerInParent="true">
               <ProgressBar android:id="@+id/main__progressbar_1mb_download"
  	                   android:layout_width="fill_parent"
-	                   android:layout_height="8dp"
+	                   android:layout_height="12dp"
                            style="?android:attr/progressBarStyleHorizontal"/>
               <TextView android:id="@+id/main__text_1mb_download"
 	                android:layout_width="wrap_content" 
     	                android:layout_height="wrap_content" 
 		        android:layout_below="@id/main__progressbar_1mb_download"
                         android:layout_centerHorizontal="true"
+                        android:textSize="16sp"
     		        android:text="@string/value_na"/>
           </RelativeLayout>
         </RelativeLayout>

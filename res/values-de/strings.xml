@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Netzwerktester</string>
+
+    <string name="dialog_ok">Ok</string>
+    
+    <string name="start_tests">  Tests starten  </string>
+    <string name="stop_tests">  Tests stoppen  </string>
+    <string name="value_na">n/a</string>
+    <string name="tester_not_tested_expl">Der Test kann nicht ausgeführt werden. Datenverbindungsfehler.</string>
+
+    <string name="network_type">Netzwerktyp: %1$s</string>
+    <string name="network_unknown">unbekannt</string>
+    <string name="warning_data_mobile">Vorsicht Datenabrechnung, Sie sind auf dem mobilen Netzwerktyp!</string>
+    <string name="warning_data_generic">Vorsicht Datenabrechnung, Sie werden ein Megabyte Daten herunterladen!</string>
+    <string name="error_unknown_network_type">Unbekannter Netzwerktyp. Bitte aktualisieren Sie die App oder melden Sie diesen Vorfall als Programmfehler.</string>
+    <string name="failed">Fehlgeschlagen (%1$s)</string>
+    <string name="dl_speed">%1$.2f KB/Sek.</string>
+    <string name="dl_too_small">Download-Datei zu klein. Sie sind vielleicht nicht direkt dem Internet verbunden, oder versuchen Sie es später nochmals, oder aktualisieren Sie die App.</string>
+    
+    <string name="host_resolution">Hostnamensauflösung: </string>
+    <string name="host_resolution_expl">Zwei Hostnamensauflösungen mit Zeitmessung werden ausgeführt auf google.com und www.google.com.</string>
+    <string name="host_resolved">%1$d bzw. %2$d ms</string>
+    
+    <string name="typical_error_unknownhost">Unbekannter Host</string>
+    <string name="typical_error_connectiontimeout">Zeitlimite für Verbindung überschritten</string>
+    <string name="typical_error_connectionrefused">Verbindung verweigert</string>
+    <string name="typical_error_sockettimeout">Zeitlimite für Daten überschritten</string>
+
+    <string name="tcp_connection">TCP-Verbindung: </string>
+    <string name="tcp_connection_expl">Zwei TCP-Verbindungen mit Zeitmessung werden ausgeführt auf www.google.com:80.</string>
+    <string name="tcp_connected">%1$d bzw. %2$d ms</string>
+        
+    <string name="timing_test_good">Die gemessene Zeit kann als \'gut\' bezeichnet werden. Ihre Verbindung ist schnell.</string>
+    
+    <string name="timing_test_medium">Die gemessene Zeit kann als \'mittelmässig\' bezeichnet werden. Ihre Verbindung ist in Ordnung, aber nicht so schnell.</string>
+    
+    <string name="timing_test_bad">Die gemessene Zeit kann als \'schlecht\' bezeichnet werden. Ihre Verbindung ist langsam.</string>
+
+    <string name="real_web">Internetzugriff </string>
+    <string name="real_web_expl">Eine kleine Prüfdatei wird von der Netzwerktester-Webseite heruntergeladen. Falls deren Inhalt nicht korrekt ist, sind Sie wahrscheinlich nicht direkt mit dem Internet verbunden, sondern werden zum Beispiel auf ein Abrechnungsportal weitergeleitet. (Dies ist bei kostenpflichtigen WiFi-Hotspots der Fall.) </string>
+
+    <string name="real_web_ok">Direkter Zugriff</string>
+    <string name="real_web_fail">Indirekter Zugriff</string>
+
+    <string name="real_web_ok_expl">Eine kleine Prüfdatei wurde von der Netzwerktester-Webseite heruntergeladen und deren Inhalt ist korrekt. Somit ist Ihre Datenverbindung in Ordnung, Sie sind direkt und ohne Um- oder Weiterleitung mit dem Internet verbunden.</string>
+    <string name="real_web_fail_expl">Eine kleine Prüfdatei wurde von der Netzwerktester-Webseite heruntergeladen und deren Inhalt ist nicht korrekt. Sie sind wahrscheinlich nicht direkt mit dem Internet verbunden, sondern werden um- oder weitergeleitet, zum Beispiel auf ein Abrechnungsportal.</string>
+
+    <string name="_10kb_download">10KB Dl.: </string>
+    
+    <string name="_100kb_download">100KB Dl.: </string>
+
+    <string name="_1mb_download">1MB Dl.: </string>
+
+    <string name="menu_help">Hilfe</string>
+    <string name="menu_about">Impressum</string>
+    <string name="menu_feedback">Rückmeldung</string>
+
+    <string name="menu_help_content">Diese kleine Applikation führt eine Anzahl einfacher Tests aus, um Ihre Datenverbindung zu testen. Markieren Sie die Kontrollkästchen in der linken Kolonne, um die gewünschten Tests auszuführen. Die Resultate werden auf der rechten Bildschirmseite angezeigt.</string>
+    <string name="menu_about_content">Die Urheberrechte dieser Applikation liegen bei Guillaume Cottenceau. Es handelt sich um Open-Source-Software unter der Apache 2.0 Lizenz. Konsultieren Sie die Webseite für den Quellcode.</string>
+    <string name="error_failed_mail_composer">Öffnen des Email-Programms fehlgeschlagen.</string>
+    
+</resources>

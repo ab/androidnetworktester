@@ -18,7 +18,7 @@
     <string name="dl_speed">%1$.2f KB/Sek.</string>
     <string name="dl_too_small">Download-Datei zu klein. Sie sind vielleicht nicht direkt dem Internet verbunden, oder versuchen Sie es später nochmals, oder aktualisieren Sie die App.</string>
     
-    <string name="host_resolution">Hostnamensauflösung: </string>
+    <string name="host_resolution">Hostnamens-auflösung: </string>
     <string name="host_resolution_expl">Zwei Hostnamensauflösungen mit Zeitmessung werden ausgeführt auf google.com und www.google.com.</string>
     <string name="host_resolved">%1$d bzw. %2$d ms</string>
     

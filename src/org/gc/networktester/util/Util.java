@@ -141,8 +141,12 @@ public class Util {
     }
 
     public static AlertDialog createDialog( final Activity activity, int messageId ) {
+        return createDialog( activity, activity.getString( messageId ) );
+    }
+
+    public static AlertDialog createDialog( final Activity activity, String message ) {
         AlertDialog.Builder builder = new AlertDialog.Builder( activity );
-        builder.setMessage( messageId ).setPositiveButton( activity.getString( R.string.dialog_ok ), null );
+        builder.setMessage( message ).setPositiveButton( activity.getString( R.string.dialog_ok ), null );
         AlertDialog ad = builder.create();
         ad.show();
         return ad;

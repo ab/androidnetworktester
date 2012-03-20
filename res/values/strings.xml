@@ -51,8 +51,10 @@
 
     <string name="menu_help">Help</string>
     <string name="menu_about">About</string>
-    <string name="menu_feedback">Feedback</string>
+    <string name="menu_more_information">More Information</string>
 
+    <string name="more_information_none">No network information available, sorry.</string>
+        
     <string name="menu_help_content">This small application performs one or a series of simple tests to validate your data connection. You can check/uncheck the boxes in the left column to activate the tests; results will appear in the right part of the screen.</string>
     <string name="menu_about_content">This application is Copyright (c) Guillaume Cottenceau. It is free software under the Apache 2.0 license. Check out the website to access sourcecode.</string>
 

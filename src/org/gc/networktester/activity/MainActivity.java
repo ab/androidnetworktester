@@ -8,7 +8,11 @@
 
 package org.gc.networktester.activity;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -132,6 +136,9 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected( MenuItem item ) {
         switch ( item.getItemId() ) {
+        case R.id.menu_more_information:
+            showMoreInformation();
+            break;
         case R.id.menu_help:
             dialog = Util.createDialog( this, R.string.menu_help_content );
             break;
@@ -142,6 +149,52 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected( item );
     }
     
+    private void showMoreInformation() {
+        String message = "";
+        
+        NetworkInfo netinfo = ( (ConnectivityManager) getSystemService( Context.CONNECTIVITY_SERVICE ) ).getActiveNetworkInfo();
+        if ( netinfo != null ) {
+            message += "State: " + netinfo.getState() + "\n";
+            message += "Detailed state: " + netinfo.getDetailedState() + "\n";
+            message += "Roaming: " + netinfo.isRoaming() + "\n";
+        }
+
+        Enumeration<NetworkInterface> en = null;
+        try {
+            en = NetworkInterface.getNetworkInterfaces();
+            if ( en != null ) {
+                while ( en.hasMoreElements() ) {
+                    NetworkInterface intf = en.nextElement();
+                    List<String> ips = new ArrayList<String>();
+                    boolean loopback;
+                    try {
+                        loopback = intf.isLoopback();
+                    } catch ( NoSuchMethodError nsme ) {
+                        // for API level < 9    
+                        loopback = intf.getName().startsWith( "lo" );
+                    }
+                    if ( ! loopback ) {
+                        for ( Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements(); ) {
+                            InetAddress inetAddress = enumIpAddr.nextElement();
+                            ips.add( inetAddress.getHostAddress() );
+                        }
+                        if ( ips.size() > 0 ) {
+                            message += "IP(s) of " + intf.getName() + ": " + Util.join( ips, ", " ) + "\n";
+                        }
+                    }
+                }
+            }
+        } catch ( SocketException se ) {
+            Log.error( "Failed getting network interfaces: " + se );
+        }
+        
+        if ( message.length() == 0 ) {
+            message = getString( R.string.more_information_none );
+        }
+        
+        dialog = Util.createDialog( this, message );
+    }
+
     private void launch() {
         updateNetworkType();  // update for in case app was launched kinda long ago and network has changed
         final Map<Tester, Boolean> areActive = new HashMap<Tester, Boolean>();

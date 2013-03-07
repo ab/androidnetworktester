@@ -12,7 +12,7 @@
     <string name="network_type">Type de réseau : %1$s</string>
     <string name="network_unknown">inconnu</string>
     <string name="warning_data_mobile">Attention à la facturation des données, vous êtes sur le réseau mobile.</string>
-    <string name="warning_data_generic">Attention à la facturation des données, vous allez télécharger un mégaoctet de données.</string>
+    <string name="warning_data_generic">Attention à la facturation des données, vous allez télécharger au moins un mégaoctet de données.</string>
     <string name="error_unknown_network_type">Type de réseau inconnu. Essayez de mettre à jour l\'application ou rapporter ce bug.</string>            
 
     <string name="failed">Échec (%1$s)</string>
@@ -43,12 +43,10 @@
     <string name="real_web_ok_expl">Un petit fichier spécifique a été téléchargé du site web du Testeur Réseau, et son contenu était correct. Donc tout a l\'air bon avec votre connexion de données, vous êtes connecté au vrai web, il n\'y a pas de filtrage ou de redirection.</string>
     <string name="real_web_fail_expl">Un petit fichier spécifique a été téléchargé du site web du Testeur Réseau, et son contenu était incorrect. Vous n\'êtes probablement pas connecté au vrai web, mais redirigé autre part par exemple vers un portail de paiement !</string>
 
-    <string name="_10kb_download">Téléch. 10Ko : </string>
-
     <string name="_100kb_download">Téléch. 100Ko : </string>
-
     <string name="_1mb_download">Téléch. 1Mo : </string>
-
+    <string name="_10mb_download">Téléch. 10Mo : </string>
+    
     <string name="menu_help">Aide</string>
     <string name="menu_about">À propos</string>
     <string name="menu_feedback">Feedback</string>

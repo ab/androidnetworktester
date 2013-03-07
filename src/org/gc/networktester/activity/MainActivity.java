@@ -19,8 +19,8 @@ import java.util.Map;
 
 import org.gc.networktester.R;
 import org.gc.networktester.tester.Download100kbTester;
-import org.gc.networktester.tester.Download10kbTester;
 import org.gc.networktester.tester.Download1mbTester;
+import org.gc.networktester.tester.Download10mbTester;
 import org.gc.networktester.tester.HostResolutionTester;
 import org.gc.networktester.tester.RealWebTester;
 import org.gc.networktester.tester.TcpConnectionTester;
@@ -66,9 +66,9 @@ public class MainActivity extends Activity {
         testers.add( new HostResolutionTester() );
         testers.add( new TcpConnectionTester() );
         testers.add( new RealWebTester() );
-        testers.add( new Download10kbTester() );
         testers.add( new Download100kbTester() );
         testers.add( new Download1mbTester() );
+        testers.add( new Download10mbTester() );
 
         setContentView( R.layout.main );
         setupViews();
@@ -166,13 +166,7 @@ public class MainActivity extends Activity {
                 while ( en.hasMoreElements() ) {
                     NetworkInterface intf = en.nextElement();
                     List<String> ips = new ArrayList<String>();
-                    boolean loopback;
-                    try {
-                        loopback = intf.isLoopback();
-                    } catch ( NoSuchMethodError nsme ) {
-                        // for API level < 9    
-                        loopback = intf.getName().startsWith( "lo" );
-                    }
+                    boolean loopback = intf.isLoopback();
                     if ( ! loopback ) {
                         for ( Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements(); ) {
                             InetAddress inetAddress = enumIpAddr.nextElement();

@@ -12,7 +12,7 @@
     <string name="network_type">Netzwerktyp: %1$s</string>
     <string name="network_unknown">unbekannt</string>
     <string name="warning_data_mobile">Vorsicht Datenabrechnung, Sie sind auf dem mobilen Netzwerktyp!</string>
-    <string name="warning_data_generic">Vorsicht Datenabrechnung, Sie werden ein Megabyte Daten herunterladen!</string>
+    <string name="warning_data_generic">Vorsicht Datenabrechnung, Sie werden mindestens ein Megabyte Daten herunterladen!</string>
     <string name="error_unknown_network_type">Unbekannter Netzwerktyp. Bitte aktualisieren Sie die App oder melden Sie diesen Vorfall als Programmfehler.</string>
     <string name="failed">Fehlgeschlagen (%1$s)</string>
     <string name="dl_speed">%1$.2f KB/Sek.</string>
@@ -46,12 +46,10 @@
     <string name="real_web_ok_expl">Eine kleine Prüfdatei wurde von der Netzwerktester-Webseite heruntergeladen und deren Inhalt ist korrekt. Somit ist Ihre Datenverbindung in Ordnung, Sie sind direkt und ohne Um- oder Weiterleitung mit dem Internet verbunden.</string>
     <string name="real_web_fail_expl">Eine kleine Prüfdatei wurde von der Netzwerktester-Webseite heruntergeladen und deren Inhalt ist nicht korrekt. Sie sind wahrscheinlich nicht direkt mit dem Internet verbunden, sondern werden um- oder weitergeleitet, zum Beispiel auf ein Abrechnungsportal.</string>
 
-    <string name="_10kb_download">10KB Dl.: </string>
-    
     <string name="_100kb_download">100KB Dl.: </string>
-
     <string name="_1mb_download">1MB Dl.: </string>
-
+    <string name="_10kb_download">10MB Dl.: </string>
+    
     <string name="menu_help">Hilfe</string>
     <string name="menu_about">Impressum</string>
     <string name="menu_feedback">Rückmeldung</string>

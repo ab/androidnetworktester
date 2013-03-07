@@ -12,7 +12,7 @@
     <string name="network_type">Network type: %1$s</string>
     <string name="network_unknown">unknown</string>
     <string name="warning_data_mobile">Warning about data billing, you\'re on mobile network type.</string>
-    <string name="warning_data_generic">Warning about data billing, you\'ll be downloading one megabyte of data.</string>
+    <string name="warning_data_generic">Warning about data billing, you\'ll be downloading at least one megabyte of data.</string>
     <string name="error_unknown_network_type">Unknown network type. Try to update the app or report this as a bug.</string>            
 
     <string name="failed">Failed (%1$s)</string>
@@ -43,12 +43,10 @@
     <string name="real_web_ok_expl">A small dedicated file was downloaded from Network Tester website, and its content was correct. So everything\'s fine with your data connection, you\'re connected to the real web, there\'s no filtering or redirecting.</string>
     <string name="real_web_fail_expl">A small dedicated file was downloaded from Network Tester website, and its content was incorrect. You\'re probably not connected to the real web, but redirected somewhere else like a billing portal!</string>
 
-    <string name="_10kb_download">10KB d/l: </string>
-
     <string name="_100kb_download">100KB d/l: </string>
-
     <string name="_1mb_download">1MB d/l: </string>
-
+    <string name="_10mb_download">10MB d/l: </string>
+    
     <string name="menu_help">Help</string>
     <string name="menu_about">About</string>
     <string name="menu_more_information">More Information</string>

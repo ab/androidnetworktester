@@ -55,7 +55,7 @@ public class DownloadTesterHelper {
                 final int total_read_ = total_read;
                 final String str
                     = mainAct.getString( R.string.dl_speed,
-                                         total_read / 1024.0 / ( ( SystemClock.uptimeMillis() - time_begin )/1000.0));
+                                         total_read / 1024.0 / ( ( SystemClock.uptimeMillis() - time_begin ) / 1000.0 ) );
                 mainAct.runOnUiThread( new Thread() { public void run() {
                     text.setText( str );
                     pb.setProgress( 100 * total_read_ / expsize_ ); }});

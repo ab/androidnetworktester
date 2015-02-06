@@ -33,6 +33,7 @@ public class DownloadTesterHelper {
         try {
             Socket sock = new Socket( "androidnetworktester.googlecode.com", 80 );
             if ( mainAct.isWantStop() ) {
+                sock.close();
                 return false;
             }
             sock.getOutputStream().write( ( "GET /files/" + name + " HTTP/1.0\r\n" +
@@ -46,6 +47,8 @@ public class DownloadTesterHelper {
             long time_begin = SystemClock.uptimeMillis();
             while ( ( read_count = is.read( b, 0, 4096 ) ) != -1 ) {
                 if ( mainAct.isWantStop() ) {
+                    is.close();
+                    sock.close();
                     return false;
                 }
                 total_read += read_count;
@@ -64,6 +67,7 @@ public class DownloadTesterHelper {
                     Toast.makeText( mainAct, R.string.dl_too_small, Toast.LENGTH_LONG ).show(); } } ); 
             }
 
+            is.close();
             sock.close();
             return true;
 

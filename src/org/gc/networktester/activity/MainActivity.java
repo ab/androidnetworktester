@@ -118,6 +118,10 @@ public class MainActivity extends Activity {
                 imageNetworkType.setImageResource( R.drawable.mobile );
             } else if ( networkType == 6 ) {  // ConnectivityManager.TYPE_WIMAX since API level 8
                 imageNetworkType.setImageResource( R.drawable.wimax );
+            } else if ( networkType == 7 ) {  // ConnectivityManager.TYPE_BLUETOOTH since API level 13
+                imageNetworkType.setImageResource( R.drawable.bluetooth );
+            } else if ( networkType == 9 ) {  // ConnectivityManager.TYPE_ETHERNET since API level 13
+                imageNetworkType.setImageResource( R.drawable.ethernet );
             }
         }
         textNetworkType.setText( getString( R.string.network_type, type ) );        

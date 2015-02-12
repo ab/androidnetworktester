@@ -227,11 +227,6 @@ public class MainActivity extends Activity {
     }
  
     public void onPause() {
-        // need to detach existing popup windows before pausing/destroying activity
-        // (screen orientation change, for example)
-        if ( dialog != null ) {
-            dialog.dismiss();
-        }
         wantStop = true;
         for ( Tester tester : testers ) {
             tester.onPause();
@@ -243,6 +238,15 @@ public class MainActivity extends Activity {
         }
         editor.commit();
         super.onPause();
+    }
+
+    public void onDestroy() {
+        super.onDestroy();
+        // need to detach existing popup windows before destroying activity (screen orientation change, for example)
+        if ( dialog != null ) {
+            dialog.dismiss();
+            dialog = null;
+        }
     }
     
     public void onResume() {

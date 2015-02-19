@@ -46,9 +46,10 @@
     <string name="real_web_ok_expl">Eine kleine Prüfdatei wurde von der Netzwerktester-Webseite heruntergeladen und deren Inhalt ist korrekt. Somit ist Ihre Datenverbindung in Ordnung, Sie sind direkt und ohne Um- oder Weiterleitung mit dem Internet verbunden.</string>
     <string name="real_web_fail_expl">Eine kleine Prüfdatei wurde von der Netzwerktester-Webseite heruntergeladen und deren Inhalt ist nicht korrekt. Sie sind wahrscheinlich nicht direkt mit dem Internet verbunden, sondern werden um- oder weitergeleitet, zum Beispiel auf ein Abrechnungsportal.</string>
 
+    <string name="_10kb_download">10KB Dl.: </string>
     <string name="_100kb_download">100KB Dl.: </string>
     <string name="_1mb_download">1MB Dl.: </string>
-    <string name="_10kb_download">10MB Dl.: </string>
+    <string name="_10mb_download">10MB Dl.: </string>
     
     <string name="menu_help">Hilfe</string>
     <string name="menu_about">Impressum</string>

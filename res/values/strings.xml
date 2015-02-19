@@ -43,6 +43,7 @@
     <string name="real_web_ok_expl">A small dedicated file was downloaded from Network Tester website, and its content was correct. So everything\'s fine with your data connection, you\'re connected to the real web, there\'s no filtering or redirecting.</string>
     <string name="real_web_fail_expl">A small dedicated file was downloaded from Network Tester website, and its content was incorrect. You\'re probably not connected to the real web, but redirected somewhere else like a billing portal!</string>
 
+    <string name="_10kb_download">10KB d/l: </string>
     <string name="_100kb_download">100KB d/l: </string>
     <string name="_1mb_download">1MB d/l: </string>
     <string name="_10mb_download">10MB d/l: </string>

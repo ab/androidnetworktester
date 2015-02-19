@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.gc.networktester.R;
+import org.gc.networktester.tester.Download10kbTester;
 import org.gc.networktester.tester.Download100kbTester;
 import org.gc.networktester.tester.Download1mbTester;
 import org.gc.networktester.tester.Download10mbTester;
@@ -66,6 +67,7 @@ public class MainActivity extends Activity {
         testers.add( new HostResolutionTester() );
         testers.add( new TcpConnectionTester() );
         testers.add( new RealWebTester() );
+        testers.add( new Download10kbTester() );
         testers.add( new Download100kbTester() );
         testers.add( new Download1mbTester() );
         testers.add( new Download10mbTester() );

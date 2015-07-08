@@ -38,13 +38,13 @@
     <string name="timing_test_bad">Die gemessene Zeit kann als \'schlecht\' bezeichnet werden. Ihre Verbindung ist langsam.</string>
 
     <string name="real_web">Internetzugriff </string>
-    <string name="real_web_expl">Eine kleine Prüfdatei wird von der Netzwerktester-Webseite heruntergeladen. Falls deren Inhalt nicht korrekt ist, sind Sie wahrscheinlich nicht direkt mit dem Internet verbunden, sondern werden zum Beispiel auf ein Abrechnungsportal weitergeleitet. (Dies ist bei kostenpflichtigen WiFi-Hotspots der Fall.) </string>
+    <string name="real_web_expl">Eine kleine Prüfdatei wird heruntergeladen. Falls deren Inhalt nicht korrekt ist, sind Sie wahrscheinlich nicht direkt mit dem Internet verbunden, sondern werden zum Beispiel auf ein Abrechnungsportal weitergeleitet. (Dies ist bei kostenpflichtigen WiFi-Hotspots der Fall.) </string>
 
     <string name="real_web_ok">Direkter Zugriff</string>
     <string name="real_web_fail">Indirekter Zugriff</string>
 
-    <string name="real_web_ok_expl">Eine kleine Prüfdatei wurde von der Netzwerktester-Webseite heruntergeladen und deren Inhalt ist korrekt. Somit ist Ihre Datenverbindung in Ordnung, Sie sind direkt und ohne Um- oder Weiterleitung mit dem Internet verbunden.</string>
-    <string name="real_web_fail_expl">Eine kleine Prüfdatei wurde von der Netzwerktester-Webseite heruntergeladen und deren Inhalt ist nicht korrekt. Sie sind wahrscheinlich nicht direkt mit dem Internet verbunden, sondern werden um- oder weitergeleitet, zum Beispiel auf ein Abrechnungsportal.</string>
+    <string name="real_web_ok_expl">Eine kleine Prüfdatei wurde heruntergeladen und deren Inhalt ist korrekt. Somit ist Ihre Datenverbindung in Ordnung, Sie sind direkt und ohne Um- oder Weiterleitung mit dem Internet verbunden.</string>
+    <string name="real_web_fail_expl">Eine kleine Prüfdatei wurde heruntergeladen und deren Inhalt ist nicht korrekt. Sie sind wahrscheinlich nicht direkt mit dem Internet verbunden, sondern werden um- oder weitergeleitet, zum Beispiel auf ein Abrechnungsportal.</string>
 
     <string name="_10kb_download">10KB Dl.: </string>
     <string name="_100kb_download">100KB Dl.: </string>

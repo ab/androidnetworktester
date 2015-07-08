@@ -37,11 +37,11 @@
     <string name="timing_test_bad">The timing result is considered to be bad. Your connection seems pretty slow.</string>
 
     <string name="real_web">Real web: </string>
-    <string name="real_web_expl">A small dedicated file is downloaded from Network Tester website, and if its content is not correct, it would mean you\'re probably not connected to the real web, but redirected somewhere else like a billing portal (open Wifi hotspot case, needing payment for using).</string>
+    <string name="real_web_expl">A small dedicated file is downloaded, and if its content is not correct, it would mean you\'re probably not connected to the real web, but redirected somewhere else like a billing portal (open Wifi hotspot case, needing payment for using).</string>
     <string name="real_web_ok">real web content</string>
     <string name="real_web_fail">fake web content!</string>
-    <string name="real_web_ok_expl">A small dedicated file was downloaded from Network Tester website, and its content was correct. So everything\'s fine with your data connection, you\'re connected to the real web, there\'s no filtering or redirecting.</string>
-    <string name="real_web_fail_expl">A small dedicated file was downloaded from Network Tester website, and its content was incorrect. You\'re probably not connected to the real web, but redirected somewhere else like a billing portal!</string>
+    <string name="real_web_ok_expl">A small dedicated file was downloaded, and its content was correct. So everything\'s fine with your data connection, you\'re connected to the real web, there\'s no filtering or redirecting.</string>
+    <string name="real_web_fail_expl">A small dedicated file was downloaded, and its content was incorrect. You\'re probably not connected to the real web, but redirected somewhere else like a billing portal!</string>
 
     <string name="_10kb_download">10KB d/l: </string>
     <string name="_100kb_download">100KB d/l: </string>

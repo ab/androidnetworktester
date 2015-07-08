@@ -21,7 +21,6 @@ import org.gc.networktester.R;
 import org.gc.networktester.tester.Download10kbTester;
 import org.gc.networktester.tester.Download100kbTester;
 import org.gc.networktester.tester.Download1mbTester;
-import org.gc.networktester.tester.Download10mbTester;
 import org.gc.networktester.tester.HostResolutionTester;
 import org.gc.networktester.tester.RealWebTester;
 import org.gc.networktester.tester.TcpConnectionTester;
@@ -70,8 +69,7 @@ public class MainActivity extends Activity {
         testers.add( new Download10kbTester() );
         testers.add( new Download100kbTester() );
         testers.add( new Download1mbTester() );
-        testers.add( new Download10mbTester() );
-
+        
         setContentView( R.layout.main );
         setupViews();
         

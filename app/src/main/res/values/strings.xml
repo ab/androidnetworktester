@@ -19,6 +19,12 @@
     <string name="dl_speed">%1$.2f KB/sec</string>
     <string name="dl_too_small">Download file too small. You might not be connected to the real web, or try again later, or try to update the app.</string>
 
+    <string name="ping_internet">Ping Internet: </string>
+    <string name="ping_internet_expl">An ICMP ping echo request is performed against Google public DNS (8.8.8.8).</string>
+    <string name="ping_time">%1$d ms</string>
+    <string name="ping_internet_success">ICMP echo request to 8.8.8.8 succeeded.</string>
+    <string name="ping_internet_failure">ICMP echo request to 8.8.8.8 failed or timed out.</string>
+
     <string name="host_resolution">Host resolv: </string>
     <string name="host_resolution_expl">Two hostname resolutions are performed on google.com and www.google.com and timing is measured.</string>
     <string name="host_resolved">%1$d then %2$d ms</string>

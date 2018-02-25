@@ -22,6 +22,7 @@ import org.gc.networktester.tester.Download10kbTester;
 import org.gc.networktester.tester.Download100kbTester;
 import org.gc.networktester.tester.Download1mbTester;
 import org.gc.networktester.tester.HostResolutionTester;
+import org.gc.networktester.tester.PingInternetTester;
 import org.gc.networktester.tester.RealWebTester;
 import org.gc.networktester.tester.TcpConnectionTester;
 import org.gc.networktester.tester.Tester;
@@ -63,6 +64,7 @@ public class MainActivity extends Activity {
         super.onCreate( savedInstanceState );
         
         testers = new ArrayList<Tester>();
+        testers.add( new PingInternetTester() );
         testers.add( new HostResolutionTester() );
         testers.add( new TcpConnectionTester() );
         testers.add( new RealWebTester() );

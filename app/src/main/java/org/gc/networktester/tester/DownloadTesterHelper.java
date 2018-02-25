@@ -25,6 +25,7 @@ public class DownloadTesterHelper {
     
     public static boolean performTest( String name, int expsize, final MainActivity mainAct, final ProgressBar pb,
                                        final TextView text ) {
+
         final int expsize_ = expsize + 190 - 1024;  // + HTTP protocol overhead - 1024 first bytes read not counted 
         mainAct.runOnUiThread( new Thread() { public void run() {
             pb.setMax( 100 );
@@ -37,7 +38,8 @@ public class DownloadTesterHelper {
                 return false;
             }
             sock.getOutputStream().write( ( "GET /~gc/" + name + " HTTP/1.0\r\n" +
-                                            "Host: zarb.org\n\r\n" ).getBytes( "US-ASCII" ) );
+                                            "Host: zarb.org\r\n\r\n" ).getBytes( "US-ASCII" ) );
+
             InputStream is = sock.getInputStream();
             byte[] b = new byte[ 4096 ];
             int read_count, total_read = 0;

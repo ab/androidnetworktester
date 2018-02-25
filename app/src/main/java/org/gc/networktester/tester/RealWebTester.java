@@ -104,7 +104,7 @@ public class RealWebTester implements Tester {
         HttpEntity entity = null;
         try {
             HttpResponse response = httpclient.execute(
-                                      new HttpGet( "http://androidnetworktester.googlecode.com/files/realweb.txt" ) );
+                                      new HttpGet( "http://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/androidnetworktester/realweb.txt" ) );
             entity = response.getEntity();
             if ( entity == null
                  || ! EntityUtils.toString( entity ).equals( "androidnetworktester says it works!\n" ) ) {
